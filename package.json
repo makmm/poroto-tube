@@ -8,7 +8,8 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.4",
-    "react-youtube": "^7.6.0"
+    "react-youtube": "^7.6.0",
+    "ws": "^6.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,7 +19,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "analyze": "source-map-explorer build/static/js/main.*"
-
   },
   "devDependencies": {
     "gh-pages": "^1.2.0",
