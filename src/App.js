@@ -51,8 +51,14 @@ const Twitter = ({t = ''}) => {
   )
 }
 
-const Senador = (s) => (
+const SenadorOverlay = props => (
   <div className="senador">
+    {props.children}
+  </div>
+)
+
+const Senador = (s) => (
+  <div>
       <div className='title'>
           <h1>{s.Senador} ({s.edad} años) {s['Distrito (nombre)']}</h1>
           <Twitter t={s.TWITTER} />
@@ -129,7 +135,12 @@ class Home extends React.PureComponent {
     return (
     <div className='app'>
         <YouTube videoId={ytid} playerVars={{autoplay: true}} className='player'/>
-        {nowSpeaking ? <Senador {...nowSpeaking}/> : <p>cargando</p>}
+        <SenadorOverlay>
+          {nowSpeaking
+            ? <Senador {...nowSpeaking}/>
+            : <p>cargando</p>
+          }
+        </SenadorOverlay>
     </div>
     );
   }
